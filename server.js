@@ -1,5 +1,3 @@
-// backend/server.js
-
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
@@ -16,7 +14,12 @@ connectDB();
 
 // Middleware to parse JSON bodies
 app.use(express.json());
-app.use(cors());
+
+// CORS Configuration
+app.use(cors({
+  origin: "https://thunderous-kleicha-093ffe.netlify.app", // Allow only your frontend
+  credentials: true
+}));
 
 // Routes
 app.use("/api/auth", authRouter);
