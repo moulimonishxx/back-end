@@ -17,7 +17,7 @@ app.use(express.json());
 
 // CORS Configuration
 app.use(cors({
-  origin: "https://thunderous-kleicha-093ffe.netlify.app", // Allow only your frontend
+  origin: "https://moulimonishs.netlify.app", // Allow only your frontend
   credentials: true
 }));
 
