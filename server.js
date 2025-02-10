@@ -16,10 +16,14 @@ connectDB();
 app.use(express.json());
 
 // CORS Configuration
-app.use(cors({
-  origin: "https://moulimonishs.netlify.app", // Allow only your frontend
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: ["https://thunderous-kleicha-093ffe.netlify.app"], // Your Netlify frontend URL
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+
 
 // Routes
 app.use("/api/auth", authRouter);
